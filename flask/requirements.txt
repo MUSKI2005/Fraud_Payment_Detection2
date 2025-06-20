@@ -1,8 +1,5 @@
-## Tech Stack
-
-- Python
-- Flask
-- Scikit-learn
-- Pandas & NumPy
-- HTML/CSS (Bootstrap optional)
-- Jupyter Notebook (for preprocessing & training)
+flask
+scikit-learn
+numpy
+joblib
+gunicorn
