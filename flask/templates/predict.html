@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predict | Fraud Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h2>📋 Enter Transaction Details</h2>
+
+    <form action="{{ url_for('submit') }}" method="post">
+        <label>Step (time step from 1 to 744)</label>
+        <input type="number" name="step" required>
+
+        <label>Transaction Type</label>
+        <input type="number" name="type" required placeholder="0 = PAYMENT, 1 = TRANSFER, 2 = CASH_OUT, ...">
+
+        <label>Amount</label>
+        <input type="number" name="amount" step="any" required>
+
+        <label>Old Balance (Sender)</label>
+        <input type="number" name="oldbalanceOrg" step="any" required>
+
+        <label>New Balance (Sender)</label>
+        <input type="number" name="newbalanceOrg" step="any" required>
+
+        <label>Old Balance (Receiver)</label>
+        <input type="number" name="oldbalanceDest" step="any" required>
+
+        <label>New Balance (Receiver)</label>
+        <input type="number" name="newbalanceDest" step="any" required>
+
+        <input type="submit" value="Predict Transaction">
+    </form>
+</body>
+</html>

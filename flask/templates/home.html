@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fraud Payment Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="designer-box">
+            <h1>🔐 Welcome to Fraud Detector AI</h1>
+            <p>Your smart assistant to detect suspicious financial transactions in seconds.</p>
+
+            <img src="https://cdn-icons-png.flaticon.com/512/6165/6165971.png"
+                 alt="Fraud Icon" style="width: 100px; margin: 25px auto;">
+
+            <a href="/predict" class="btn">🚀 Start Prediction</a>
+        </div>
+    </div>
+    <script>
+  const box = document.querySelector('.designer-box');
+
+  box.addEventListener('mousemove', (e) => {
+    const rect = box.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    // REVERSED tilt direction (tilt towards screen)
+    const xRotate = ((0.5 - y / rect.height) * 40);  // flipped Y
+    const yRotate = ((0.5 - x / rect.width) * 40);   // flipped X
+
+    box.style.transform = `rotateX(${xRotate}deg) rotateY(${yRotate}deg) scale(1.07)`;
+  });
+
+  box.addEventListener('mouseleave', () => {
+    box.style.transform = 'rotateX(0) rotateY(0) scale(1)';
+  });
+</script>
+</body>
+</html>
